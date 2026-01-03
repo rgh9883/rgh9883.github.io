@@ -1,10 +1,92 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Essential for an OS feel: no scrolling and no text selection */
+:root {
+  --os-bg: #008080;
+  --win-bg: #c0c0c0;
+  --win-title: #000080;
+  --win-title-text: #ffffff;
+  --win-text: #000000;
+  /* 3D Shading Colors */
+  --border-white: #ffffff;
+  --border-light: #dfdfdf;
+  --border-dark: #808080;
+  --border-black: #000000;
+}
+
+[data-theme='rose'] {
+  --os-bg: #800080;
+  --win-bg: #d4d0c8;
+  --win-title: #800000;
+}
+
 body {
-  overflow: hidden;
-  user-select: none;
-  background: #000; /* Fallback color */
+  background-color: var(--os-bg);
+  margin: 0;
+  padding: 0;
+  font-family: 'Tahoma', sans-serif; /* Win95 font */
+}
+
+/* THE REAL 95 OUTSET (Double Bevel) */
+.win95-outset {
+  box-shadow: 
+    inset 1px 1px 0 var(--border-white),
+    inset -1px -1px 0 var(--border-dark),
+    1px 1px 0 var(--border-black);
+  background-color: var(--win-bg);
+}
+
+/* THE REAL 95 INSET (Double Bevel) */
+.win95-inset {
+  box-shadow: 
+    inset 1px 1px 0 var(--border-dark),
+    inset -1px -1px 0 var(--border-white);
+  border: 1px solid var(--border-black);
+}
+
+/* TASKBAR SPECIFIC */
+.taskbar {
+  height: 28px;
+  background-color: var(--win-bg);
+  border-top: 2px solid var(--border-white);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  z-index: 9999;
+}
+
+/* The Button Base */
+.win95-btn {
+  background-color: var(--win-bg);
+  border: none;
+  /* 2-pixel outset effect */
+  box-shadow: 
+    inset 1px 1px 0 var(--border-white),
+    inset -1px -1px 0 var(--border-dark),
+    1px 1px 0 var(--border-black),
+    -1px -1px 0 var(--win-bg); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+/* The "Entire Button Sinks" State */
+.win95-btn:active {
+  /* We remove the outer black shadow and flip the inner ones */
+  box-shadow: 
+    inset 1px 1px 0 var(--border-dark),
+    inset -1px -1px 0 var(--border-white),
+    0.5px 0.5px 0 var(--border-black); /* The "pressed" edge */
+  
+  /* We move the WHOLE button content down and right */
+  transform: translate(1px, 1px);
+  outline: none;
+}
+
+.pixelated {
+  image-rendering: pixelated; /* Chrome/Edge/Safari */
+  image-rendering: crisp-edges; /* Firefox */
 }
