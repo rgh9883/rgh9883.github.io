@@ -57,33 +57,23 @@ body {
   z-index: 9999;
 }
 
-/* The Button Base */
+/* The 3D "Outset" border used for buttons */
 .win95-btn {
-  background-color: var(--win-bg);
-  border: none;
-  /* 2-pixel outset effect */
-  box-shadow: 
-    inset 1px 1px 0 var(--border-white),
-    inset -1px -1px 0 var(--border-dark),
-    1px 1px 0 var(--border-black),
-    -1px -1px 0 var(--win-bg); 
+  background: #c0c0c0;
+  border-top: 1.5px solid #fff;
+  border-left: 1.5px solid #fff;
+  border-right: 1.5px solid #404040;
+  border-bottom: 1.5px solid #404040;
+  box-shadow: 1px 1px 0 #000; /* The outer black edge */
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: default;
 }
 
-/* The "Entire Button Sinks" State */
 .win95-btn:active {
-  /* We remove the outer black shadow and flip the inner ones */
-  box-shadow: 
-    inset 1px 1px 0 var(--border-dark),
-    inset -1px -1px 0 var(--border-white),
-    0.5px 0.5px 0 var(--border-black); /* The "pressed" edge */
-  
-  /* We move the WHOLE button content down and right */
-  transform: translate(1px, 1px);
-  outline: none;
+  border: 1.5px solid #808080;
+  box-shadow: none;
+  padding: 1px 1px 0 1px; /* The "nudge" when clicked */
 }
 
 .pixelated {

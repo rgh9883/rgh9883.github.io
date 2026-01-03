@@ -7,7 +7,7 @@ export default function Taskbar() {
   return (
     <div className="taskbar">
       {/* Start Button */}
-      <button className="win95-btn h-[22px] px-2 ml-1 font-bold text-[11px] gap-1">
+      <button className="win95-btn h-[22px] px-1 ml-1 font-bold text-[11px] gap-1">
         <img src="win95/logo.ico" className="h-6"/>
         <span>Start</span>
       </button>

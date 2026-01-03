@@ -1,7 +1,6 @@
 'use client';
 import { useRef } from 'react';
 import Draggable from 'react-draggable';
-import { X, Minus } from 'lucide-react';
 import { useWindows } from '@/context/WindowContext';
 
 export default function WindowFrame({
@@ -14,71 +13,55 @@ export default function WindowFrame({
   const { focusApp, closeApp, activeWindow, openWindows } = useWindows();
   const nodeRef = useRef(null);
 
-  const winState = openWindows.find((w) => w.id === id);
+  const win = openWindows.find((w) => w.id === id);
   const isActive = activeWindow === id;
 
-  if (!winState) return null;
+  if (!win) return null;
 
   return (
     <Draggable nodeRef={nodeRef} handle=".handle" onStart={() => focusApp(id)}>
       <div
         ref={nodeRef}
-        onClick={() => focusApp(id)}
-        className="absolute win95-outset p-[3px] min-w-[250px] flex flex-col"
-        style={{ zIndex: winState.zIndex }}
+        className="absolute win95-outset p-[3px] flex flex-col min-w-[180px] min-h-[100px]"
+        style={{ zIndex: win.zIndex }}
       >
-        {/* Title Bar - Exactly 18px tall */}
+        {/* Title Bar - Simple Gradient */}
         <div
-          className="handle h-[18px] flex items-center justify-between px-1 mb-[2px]"
+          className="handle h-[18px] flex items-center justify-between px-1 mb-[2px] cursor-default"
           style={{
-            backgroundColor: isActive
-              ? 'var(--win-title)'
-              : 'var(--border-dark)',
+            background: isActive
+              ? 'linear-gradient(90deg, #000080, #1084d0)'
+              : 'linear-gradient(90deg, #808080, #b5b5b5)',
           }}
         >
-          <div className="flex items-center gap-1 overflow-hidden">
-            <span
-              className="font-bold text-[11px] leading-none truncate select-none ml-1"
-              style={{ color: 'var(--win-title-text)' }}
-            >
-              {id.charAt(0).toUpperCase() + id.slice(1)}
-            </span>
+          <div className="flex items-center gap-1 text-white font-bold text-[11px]">
+            {win.icon && <img src={win.icon} className="w-4 h-4" />}
+            <span>{win.id.charAt(0).toUpperCase() + win.id.slice(1)}</span>
           </div>
-          <div className="flex gap-[2px]">
-            {/* Minimize Button */}
+
+          <div className="flex gap-[2px] shrink-0 mr-1">
+            {/* Minimize */}
             <button className="win95-btn w-4 h-[14px]">
-              <Minus
-                size={10}
-                strokeWidth={4}
-                className="pointer-events-none"
-              />
+              <div className="w-2 h-[2px] bg-black mt-2" />
             </button>
 
-            {/* Close Button */}
+            {/* Maximize */}
+            <button className="win95-btn w-4 h-[14px]">
+              <div className="w-[9px] h-[7px] border-t-2 border border-black" />
+            </button>
+
+            {/* Close */}
             <button
-              onClick={(e) => {
-                e.stopPropagation();
-                closeApp(id);
-              }}
-              className="win95-btn w-4 h-[14px]"
+              onClick={() => closeApp(id)}
+              className="win95-btn w-4 h-[14px] font-bold text-xs"
             >
-              <X size={10} strokeWidth={4} className="pointer-events-none" />
+              ×
             </button>
           </div>
         </div>
 
-        {/* The White Content Inset */}
-        <div className="win95-inset bg-white flex-grow">
-          <div
-            className="p-2 min-h-[100px] text-[12px]"
-            style={{
-              backgroundColor: 'var(--win-bg)',
-              color: 'var(--win-text)',
-            }}
-          >
-            {children}
-          </div>
-        </div>
+        {/* The Content Area - Just grows with children */}
+        <div className="win95-inset bg-white min-h-[100px]">{children}</div>
       </div>
     </Draggable>
   );
