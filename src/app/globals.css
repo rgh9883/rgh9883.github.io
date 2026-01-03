@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Essential for an OS feel: no scrolling and no text selection */
+body {
+  overflow: hidden;
+  user-select: none;
+  background: #000; /* Fallback color */
+}
