@@ -1,8 +1,12 @@
 import type { ThemeConfig } from "./types";
 import { hyprlandTheme } from "./hyprland";
+import { windows95Theme } from "./windows95";
+import { macosTheme } from "./macos";
 
 export const themeRegistry: Record<string, ThemeConfig> = {
   [hyprlandTheme.id]: hyprlandTheme,
+  [windows95Theme.id]: windows95Theme,
+  [macosTheme.id]: macosTheme,
 };
 
 export const defaultThemeId = hyprlandTheme.id;

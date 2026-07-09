@@ -10,7 +10,7 @@ export function ExperienceContent() {
             <h3 className="font-medium">
               {entry.role} <span className="text-muted-foreground">· {entry.company}</span>
             </h3>
-            <span className="font-mono text-xs text-muted-foreground">
+            <span className="text-xs text-muted-foreground">
               {entry.start} — {entry.end}
             </span>
           </div>

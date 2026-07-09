@@ -13,7 +13,7 @@ export function ModeToggle({ className }: { className?: string }) {
       variant="outline"
       size="sm"
       onClick={toggleMode}
-      className={cn("font-mono", className)}
+      className={cn(className)}
       aria-label={mode === "traditional" ? "Switch to OS mode" : "Switch to Traditional mode"}
     >
       {mode === "traditional" ? <LayoutGrid size={14} /> : <ScrollText size={14} />}

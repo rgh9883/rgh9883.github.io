@@ -6,7 +6,7 @@ export function SkillsContent() {
     <div className="flex flex-col gap-4">
       {skills.map((group) => (
         <div key={group.id}>
-          <h3 className="font-mono text-xs tracking-wide text-muted-foreground uppercase">
+          <h3 className="text-[11px] font-semibold tracking-[0.5px] text-muted-foreground uppercase">
             {group.label}
           </h3>
           <div className="mt-2 flex flex-wrap gap-1.5">

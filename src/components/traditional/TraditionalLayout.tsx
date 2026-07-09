@@ -1,4 +1,5 @@
 import { Nav } from "./Nav";
+import { Hero } from "./Hero";
 import { Section } from "./Section";
 import { AboutContent } from "@/components/shared/AboutContent";
 import { ExperienceContent } from "@/components/shared/ExperienceContent";
@@ -11,27 +12,28 @@ export function TraditionalLayout() {
   return (
     <div className="min-h-svh">
       <Nav />
+      <Hero />
       <main>
         <Section id="about" heading="About">
           <AboutContent />
         </Section>
-        <Section id="experience" heading="Experience">
+        <Section id="experience" heading="Experience" title="Where I've worked">
           <ExperienceContent />
         </Section>
-        <Section id="projects" heading="Projects">
+        <Section id="projects" heading="Projects" title="Things I've built">
           <ProjectsContent />
         </Section>
-        <Section id="skills" heading="Skills">
+        <Section id="skills" heading="Skills" title="What I work with">
           <SkillsContent />
         </Section>
-        <Section id="contact" heading="Contact">
+        <Section id="contact" heading="Contact" title="Get in touch">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
             <ContactContent />
             <ResumeContent />
           </div>
         </Section>
       </main>
-      <footer className="py-8 text-center font-mono text-xs text-muted-foreground">
+      <footer className="py-8 text-center text-xs text-muted-foreground">
         Built with React, Tailwind, and a little too much Hyprland inspiration.
       </footer>
     </div>

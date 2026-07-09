@@ -11,4 +11,10 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  define: {
+    // react-draggable (via react-rnd) reads process.env.DRAGGABLE_DEBUG
+    // unconditionally; Vite doesn't polyfill `process` in the browser,
+    // so without this it throws "process is not defined" on every drag.
+    'process.env': {},
+  },
 })

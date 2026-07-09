@@ -1,25 +1,27 @@
 import type { ThemeConfig } from "./types";
 
+// Dark variant of the DESIGN.md system: canvas-dark/surface-code surfaces,
+// brand-green as the focus accent, the same Inter/Geist Mono pairing.
 export const hyprlandTheme: ThemeConfig = {
   id: "hyprland",
   name: "Hyprland",
   colors: {
     bg: "#0a0a0a",
-    surface: "#141414",
-    border: "#27272a",
-    borderFocused: "#5eead4",
-    text: "#fafafa",
-    textMuted: "#8a8a8a",
-    accent: "#5eead4",
+    surface: "#1c1c1e",
+    border: "#1f1f1f",
+    borderFocused: "#00d4a4",
+    text: "#ffffff",
+    textMuted: "#b3b3b3",
+    accent: "#00d4a4",
   },
   font: {
     sans: '"Inter", ui-sans-serif, system-ui, sans-serif',
-    mono: '"JetBrains Mono", ui-monospace, "SF Mono", monospace',
+    mono: '"Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace',
   },
   windowChrome: {
     radius: "0px",
-    borderWidth: "1px",
+    borderWidth: "2px",
     titlebarHeight: "2rem",
   },
-  wallpaper: "radial-gradient(circle at 20% 20%, #141414 0%, #0a0a0a 60%)",
+  wallpaper: "linear-gradient(135deg, #1a3d4a 0%, #2d5a4f 100%)",
 };

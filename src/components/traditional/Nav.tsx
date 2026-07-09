@@ -12,7 +12,7 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-10 border-b border-border bg-background/80 backdrop-blur">
       <nav className="mx-auto flex max-w-3xl items-center justify-between px-6 py-3">
-        <a href="#about" className="font-mono text-sm font-semibold text-primary">
+        <a href="#about" className="text-sm font-semibold text-foreground">
           rgh9883
         </a>
         <ul className="hidden gap-6 text-sm text-muted-foreground sm:flex">

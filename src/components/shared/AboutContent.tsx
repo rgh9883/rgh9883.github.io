@@ -4,7 +4,7 @@ export function AboutContent() {
   return (
     <div className="flex flex-col gap-4">
       <div>
-        <p className="font-mono text-sm text-primary">{about.role}</p>
+        <p className="text-sm font-medium text-mint">{about.role}</p>
         <h1 className="mt-1 text-3xl font-semibold tracking-tight sm:text-4xl">{about.name}</h1>
         <p className="mt-2 text-muted-foreground">{about.tagline}</p>
       </div>
@@ -13,7 +13,7 @@ export function AboutContent() {
           <p key={i}>{paragraph}</p>
         ))}
       </div>
-      <p className="font-mono text-xs text-muted-foreground">{about.location}</p>
+      <p className="text-xs text-muted-foreground">{about.location}</p>
     </div>
   );
 }

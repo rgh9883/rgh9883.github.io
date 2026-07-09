@@ -4,12 +4,16 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex w-fit shrink-0 items-center justify-center gap-1 rounded-md border border-transparent px-2 py-0.5 font-mono text-xs font-medium whitespace-nowrap",
+  "inline-flex w-fit shrink-0 items-center justify-center gap-1 rounded-sm border border-transparent px-1.5 py-0.5 text-xs font-medium whitespace-nowrap",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground",
-        secondary: "bg-secondary text-secondary-foreground",
+        // badge-discount: mint pill for standout tags. Fixed ink text, not
+        // the adaptive --color-primary — mint always pairs with literal black.
+        default: "rounded-full bg-mint px-2 text-ink",
+        // badge-type: neutral surface tag, set in Geist Mono like a type signature
+        secondary: "bg-secondary font-mono text-muted-foreground",
+        // badge-tag: outlined neutral tag
         outline: "border-border text-foreground",
       },
     },

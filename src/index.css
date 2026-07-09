@@ -1,39 +1,58 @@
 @import "tailwindcss";
 
 @theme {
-  /* ---- baseline design tokens: shared chrome + Traditional mode ---- */
-  --color-background: #0a0a0a;
-  --color-foreground: #fafafa;
-  --color-card: #141414;
-  --color-card-foreground: #fafafa;
-  --color-primary: #5eead4;
-  --color-primary-foreground: #062421;
-  --color-secondary: #1c1c1c;
-  --color-secondary-foreground: #fafafa;
-  --color-muted: #1c1c1c;
-  --color-muted-foreground: #a1a1a1;
-  --color-accent: #1c1c1c;
-  --color-accent-foreground: #fafafa;
-  --color-border: #27272a;
-  --color-ring: #5eead4;
+  /* ---- baseline design tokens: shared chrome + Traditional mode ----
+     Source: DESIGN.md (Mintlify design-system analysis), dark variant —
+     DESIGN.md ships no official dark palette (see Known Gaps), so this is
+     assembled from its dark-surface tokens: canvas-dark, surface-code,
+     hairline-dark, on-dark(-muted), brand-green. */
+  --color-background: #0a0a0a; /* canvas-dark */
+  --color-foreground: #ffffff; /* on-dark */
+  --color-card: #1c1c1e; /* surface-code */
+  --color-card-foreground: #ffffff; /* on-dark */
+  --color-primary: #ffffff; /* on-dark — button-on-dark treatment */
+  --color-primary-foreground: #0a0a0a; /* ink */
+  --color-secondary: #1c1c1e; /* surface-code */
+  --color-secondary-foreground: #ffffff; /* on-dark */
+  --color-muted: #1c1c1e; /* surface-code */
+  --color-muted-foreground: #b3b3b3; /* on-dark-muted */
+  --color-accent: #1c1c1e; /* surface-code, used for neutral hover states */
+  --color-accent-foreground: #ffffff; /* on-dark */
+  --color-border: #1f1f1f; /* hairline-dark */
+  --color-ring: #00d4a4; /* brand-green */
+  --color-mint: #00d4a4; /* brand-green, reserved for accent CTAs/active states */
+  --color-ink: #0a0a0a; /* fixed literal black — pairs with mint on badge/accent-button text regardless of mode */
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
-  --radius-md: 0.25rem;
-  --radius-lg: 0.375rem;
+  --radius-xs: 0.25rem; /* 4px */
+  --radius-sm: 0.375rem; /* 6px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
 
   /* ---- OS-mode swappable theme tokens: overwritten at runtime by applyTheme() ---- */
   --color-os-bg: #0a0a0a;
-  --color-os-surface: #141414;
-  --color-os-border: #27272a;
-  --color-os-border-focused: #5eead4;
-  --color-os-fg: #fafafa;
-  --color-os-muted: #8a8a8a;
-  --color-os-accent: #5eead4;
+  --color-os-surface: #1c1c1e;
+  --color-os-border: #1f1f1f;
+  --color-os-border-focused: #00d4a4;
+  --color-os-fg: #ffffff;
+  --color-os-muted: #b3b3b3;
+  --color-os-accent: #00d4a4;
 
   --font-os-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-os-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+  --font-os-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+:root {
+  /* Raw (non-Tailwind-category) OS-theme vars, read via arbitrary-value
+     syntax e.g. h-(--os-titlebar-height). Defaults match themes/hyprland.ts
+     so Window chrome looks correct even before applyTheme() runs. */
+  --os-window-radius: 0px;
+  --os-window-border-width: 2px;
+  --os-titlebar-height: 2rem;
+  --os-wallpaper: linear-gradient(135deg, #1a3d4a 0%, #2d5a4f 100%);
 }
 
 @layer base {
