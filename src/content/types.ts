@@ -15,6 +15,8 @@ export interface Project {
     repo?: string;
     live?: string;
   };
+  /** path under /public, e.g. "/projects/foo.png"; falls back to a placeholder tile when omitted. */
+  image?: string;
   featured?: boolean;
 }
 
@@ -28,10 +30,18 @@ export interface ExperienceEntry {
   highlights: string[];
 }
 
+export interface Skill {
+  name: string;
+  /** simple-icons slug for the logo; omit for skills with no matching brand icon (e.g. "REST APIs"). */
+  slug?: string;
+  /** official site for the language/framework/tool. */
+  url: string;
+}
+
 export interface SkillGroup {
   id: string;
   label: string;
-  skills: string[];
+  skills: Skill[];
 }
 
 export interface ContactLink {
@@ -39,4 +49,10 @@ export interface ContactLink {
   label: string;
   href: string;
   icon: "mail" | "github" | "linkedin" | "external";
+}
+
+export interface EducationData {
+  school: string;
+  degree: string;
+  gradYear: string;
 }

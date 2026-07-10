@@ -3,6 +3,7 @@ import type { ComponentType } from "react";
 import { aboutApp } from "./definitions/aboutApp";
 import { projectsApp } from "./definitions/projectsApp";
 import { experienceApp } from "./definitions/experienceApp";
+import { skillsApp } from "./definitions/skillsApp";
 import { resumeApp } from "./definitions/resumeApp";
 import { contactApp } from "./definitions/contactApp";
 
@@ -19,6 +20,7 @@ export const appRegistry: AppDefinition[] = [
   aboutApp,
   projectsApp,
   experienceApp,
+  skillsApp,
   resumeApp,
   contactApp,
 ];

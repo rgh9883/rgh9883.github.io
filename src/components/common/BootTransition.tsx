@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { useModeStore } from "@/store/modeStore";
+import { useIsMobile } from "@/lib/breakpoints";
 import { TraditionalLayout } from "@/components/traditional/TraditionalLayout";
 import { Desktop } from "@/components/os/Desktop";
 
@@ -50,7 +51,12 @@ function BootSequence({ onDone }: { onDone: () => void }) {
 // crossfade for Traditional, and an elaborate boot-sequence overlay the
 // first time OS mode mounts.
 export function BootTransition() {
-  const mode = useModeStore((s) => s.mode);
+  const storeMode = useModeStore((s) => s.mode);
+  const isMobile = useIsMobile();
+  // OS mode's draggable/resizable fixed-size windows don't fit small
+  // screens, so mobile always renders Traditional regardless of the
+  // persisted preference.
+  const mode = isMobile ? "traditional" : storeMode;
   const [booting, setBooting] = useState(false);
   const prevMode = useRef(mode);
 

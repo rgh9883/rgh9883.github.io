@@ -26,7 +26,7 @@ export function WindowTitlebar({
           type="button"
           aria-label="Minimize window"
           onClick={onMinimize}
-          className="flex size-5 items-center justify-center text-os-muted hover:text-os-fg"
+          className="flex size-5 items-center justify-center text-os-muted transition-colors hover:text-os-fg"
         >
           <Minus size={12} />
         </button>
@@ -34,7 +34,7 @@ export function WindowTitlebar({
           type="button"
           aria-label={isMaximized ? "Restore window" : "Maximize window"}
           onClick={onMaximize}
-          className="flex size-5 items-center justify-center text-os-muted hover:text-os-fg"
+          className="flex size-5 items-center justify-center text-os-muted transition-colors hover:text-os-fg"
         >
           <Square size={10} />
         </button>
@@ -42,7 +42,7 @@ export function WindowTitlebar({
           type="button"
           aria-label="Close window"
           onClick={onClose}
-          className="flex size-5 items-center justify-center text-os-muted hover:text-red-400"
+          className="flex size-5 items-center justify-center text-os-muted transition-colors hover:text-red-400"
         >
           <X size={12} />
         </button>

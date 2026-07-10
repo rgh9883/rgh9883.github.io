@@ -19,7 +19,7 @@ export function Desktop() {
   return (
     <div
       className="flex h-svh w-full flex-col overflow-hidden bg-os-bg font-os-sans"
-      style={{ backgroundImage: "var(--os-wallpaper)" }}
+      style={{ background: "var(--os-wallpaper)" }}
     >
       <Taskbar />
       <div className="relative min-h-0 flex-1">

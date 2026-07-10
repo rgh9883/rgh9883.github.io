@@ -5,16 +5,16 @@ import { Slot } from "radix-ui"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex shrink-0 items-center justify-center gap-2 text-sm font-medium whitespace-nowrap transition-colors outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "inline-flex shrink-0 items-center justify-center gap-2 text-sm font-medium whitespace-nowrap transition-[color,background-color,border-color,transform] duration-150 outline-none active:scale-[0.97] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 disabled:active:scale-100 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
         // button-primary: black pill, the dominant CTA
         default: "rounded-full bg-primary text-primary-foreground hover:bg-primary/90",
-        // button-accent-green: mint pill, reserved for brand-emphasis CTAs.
-        // Text is the fixed DESIGN.md ink (not the adaptive --color-primary) —
-        // mint always pairs with literal black text in both light and dark mode.
-        accent: "rounded-full bg-mint text-ink hover:bg-mint/90",
+        // coral pill, reserved for brand-emphasis CTAs. Text is the fixed
+        // ink token (not the adaptive --color-primary) — coral always pairs
+        // with the same dark text regardless of mode.
+        accent: "rounded-full bg-coral text-ink hover:bg-coral/90",
         // button-secondary: outlined pill
         outline:
           "rounded-full border border-border bg-transparent text-foreground hover:bg-accent",

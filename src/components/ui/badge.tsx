@@ -8,9 +8,9 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        // badge-discount: mint pill for standout tags. Fixed ink text, not
-        // the adaptive --color-primary — mint always pairs with literal black.
-        default: "rounded-full bg-mint px-2 text-ink",
+        // coral pill for standout tags. Fixed ink text, not the adaptive
+        // --color-primary — coral always pairs with the same dark text.
+        default: "rounded-full bg-coral px-2 text-ink",
         // badge-type: neutral surface tag, set in Geist Mono like a type signature
         secondary: "bg-secondary font-mono text-muted-foreground",
         // badge-tag: outlined neutral tag

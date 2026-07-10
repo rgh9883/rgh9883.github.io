@@ -5,11 +5,24 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { GithubIcon } from "@/assets/icons/GithubIcon";
 
+function ProjectThumb({ image, name }: { image?: string; name: string }) {
+  if (image) {
+    return <img src={image} alt="" className="aspect-video w-full object-cover" />;
+  }
+  // No screenshot yet — a placeholder tile in the site's own palette, not a broken image.
+  return (
+    <div className="flex aspect-video w-full items-center justify-center bg-gradient-to-br from-coral/15 to-glow/10 font-mono text-2xl font-bold text-coral/70">
+      {name.charAt(0)}
+    </div>
+  );
+}
+
 export function ProjectsContent() {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
       {projects.map((project) => (
-        <Card key={project.id}>
+        <Card key={project.id} className="overflow-hidden pt-0">
+          <ProjectThumb image={project.image} name={project.name} />
           <CardHeader>
             <CardTitle className="flex items-center justify-between gap-2 text-base">
               {project.name}

@@ -1,27 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  /* ---- baseline design tokens: shared chrome + Traditional mode ----
-     Source: DESIGN.md (Mintlify design-system analysis), dark variant —
-     DESIGN.md ships no official dark palette (see Known Gaps), so this is
-     assembled from its dark-surface tokens: canvas-dark, surface-code,
-     hairline-dark, on-dark(-muted), brand-green. */
-  --color-background: #0a0a0a; /* canvas-dark */
-  --color-foreground: #ffffff; /* on-dark */
-  --color-card: #1c1c1e; /* surface-code */
-  --color-card-foreground: #ffffff; /* on-dark */
-  --color-primary: #ffffff; /* on-dark — button-on-dark treatment */
-  --color-primary-foreground: #0a0a0a; /* ink */
-  --color-secondary: #1c1c1e; /* surface-code */
-  --color-secondary-foreground: #ffffff; /* on-dark */
-  --color-muted: #1c1c1e; /* surface-code */
-  --color-muted-foreground: #b3b3b3; /* on-dark-muted */
-  --color-accent: #1c1c1e; /* surface-code, used for neutral hover states */
-  --color-accent-foreground: #ffffff; /* on-dark */
-  --color-border: #1f1f1f; /* hairline-dark */
-  --color-ring: #00d4a4; /* brand-green */
-  --color-mint: #00d4a4; /* brand-green, reserved for accent CTAs/active states */
-  --color-ink: #0a0a0a; /* fixed literal black — pairs with mint on badge/accent-button text regardless of mode */
+  /* ---- design tokens ----
+     "Ricing" palette: navy-charcoal surfaces (not flat black), a warm
+     terminal-prompt coral as the primary accent, a cool glow as the
+     secondary/live accent. Shared by Traditional mode and OS-mode chrome —
+     every panel, in either mode, reads as the same desktop. */
+  --color-background: #11131a;
+  --color-foreground: #eceef2;
+  --color-card: #1a1d27;
+  --color-card-foreground: #eceef2;
+  --color-primary: #eceef2; /* button-on-dark: light pill, dark text */
+  --color-primary-foreground: #11131a;
+  --color-secondary: #1a1d27;
+  --color-secondary-foreground: #eceef2;
+  --color-muted: #1a1d27;
+  --color-muted-foreground: #8b90a3;
+  --color-accent: #232735; /* neutral hover surface */
+  --color-accent-foreground: #eceef2;
+  --color-border: #262a38;
+  --color-ring: #ff9166;
+  --color-coral: #ff9166; /* primary brand accent — prompt/cursor coral */
+  --color-glow: #6fd6c4; /* secondary accent — reserved for live/active indicators */
+  --color-ink: #0b0d12; /* fixed literal dark — pairs with coral on accent-button/badge text regardless of mode */
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -33,13 +34,13 @@
   --radius-xl: 1rem; /* 16px */
 
   /* ---- OS-mode swappable theme tokens: overwritten at runtime by applyTheme() ---- */
-  --color-os-bg: #0a0a0a;
-  --color-os-surface: #1c1c1e;
-  --color-os-border: #1f1f1f;
-  --color-os-border-focused: #00d4a4;
-  --color-os-fg: #ffffff;
-  --color-os-muted: #b3b3b3;
-  --color-os-accent: #00d4a4;
+  --color-os-bg: #11131a;
+  --color-os-surface: #1a1d27;
+  --color-os-border: #262a38;
+  --color-os-border-focused: #ff9166;
+  --color-os-fg: #eceef2;
+  --color-os-muted: #8b90a3;
+  --color-os-accent: #ff9166;
 
   --font-os-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-os-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -49,10 +50,12 @@
   /* Raw (non-Tailwind-category) OS-theme vars, read via arbitrary-value
      syntax e.g. h-(--os-titlebar-height). Defaults match themes/hyprland.ts
      so Window chrome looks correct even before applyTheme() runs. */
-  --os-window-radius: 0px;
-  --os-window-border-width: 2px;
+  --os-window-radius: 8px;
+  --os-window-border-width: 1px;
   --os-titlebar-height: 2rem;
-  --os-wallpaper: linear-gradient(135deg, #1a3d4a 0%, #2d5a4f 100%);
+  --os-wallpaper:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0) 0 0 / 26px 26px,
+    linear-gradient(135deg, #1c2230 0%, #11131a 55%, #191b26 100%);
 }
 
 @layer base {
@@ -67,6 +70,8 @@
   body {
     margin: 0;
     background-color: var(--color-background);
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+    background-size: 28px 28px;
     color: var(--color-foreground);
     font-family: var(--font-sans);
   }

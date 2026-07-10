@@ -3,7 +3,6 @@ import { getAppDefinition } from "@/apps/registry";
 import { ModeToggle } from "@/components/common/ModeToggle";
 import { cn } from "@/lib/utils";
 import { StartMenu } from "./StartMenu";
-import { ThemeSwitcher } from "./ThemeSwitcher";
 import { TaskbarClock } from "./TaskbarClock";
 
 export function Taskbar() {
@@ -44,7 +43,6 @@ export function Taskbar() {
           );
         })}
       </div>
-      <ThemeSwitcher />
       <TaskbarClock />
       <ModeToggle />
     </div>

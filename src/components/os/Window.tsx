@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { Rnd } from "react-rnd";
+import { motion } from "framer-motion";
 
 import { getAppDefinition } from "@/apps/registry";
 import { useWindowStore, type WindowInstance } from "@/store/windowStore";
@@ -49,9 +50,19 @@ export function Window({ instance, isFocused }: WindowProps) {
         if (!isFocused) focusWindow(instance.id);
       }}
     >
-      <div
+      <motion.div
+        role="dialog"
+        aria-label={instance.title}
+        aria-modal="false"
+        onKeyDown={(e) => {
+          if (e.key === "Escape") closeWindow(instance.id);
+        }}
+        initial={{ opacity: 0, scale: 0.96 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.96 }}
+        transition={{ duration: 0.15 }}
         className={cn(
-          "flex h-full w-full flex-col overflow-hidden border bg-os-bg shadow-2xl",
+          "flex h-full w-full flex-col overflow-hidden border bg-os-bg shadow-2xl transition-colors",
           isFocused ? "border-os-border-focused" : "border-os-border"
         )}
         style={{ borderRadius: "var(--os-window-radius)", borderWidth: "var(--os-window-border-width)" }}
@@ -63,12 +74,11 @@ export function Window({ instance, isFocused }: WindowProps) {
           onMaximize={() => maximizeWindow(instance.id)}
           onClose={() => closeWindow(instance.id)}
         />
-        {/* Content pane re-scopes the baseline color tokens to the active OS
+        {/* Content pane re-scopes the baseline color tokens to the OS
             theme's own surface/text colors, so shared *Content components
             (which use bg-background/text-foreground etc.) render consistent
-            with whichever OS theme is active — dark for Hyprland, gray for
-            Windows 95, light for macOS — instead of always following
-            Traditional mode's baseline. */}
+            with OS mode's dark chrome instead of Traditional mode's
+            baseline. */}
         <div
           className="min-h-0 flex-1 overflow-auto bg-background p-4 font-sans text-foreground"
           style={
@@ -87,7 +97,7 @@ export function Window({ instance, isFocused }: WindowProps) {
         >
           <Content />
         </div>
-      </div>
+      </motion.div>
     </Rnd>
   );
 }

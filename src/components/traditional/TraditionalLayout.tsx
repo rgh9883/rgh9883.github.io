@@ -14,19 +14,19 @@ export function TraditionalLayout() {
       <Nav />
       <Hero />
       <main>
-        <Section id="about" heading="About">
+        <Section id="about" index={1} heading="About">
           <AboutContent />
         </Section>
-        <Section id="experience" heading="Experience" title="Where I've worked">
+        <Section id="experience" index={2} heading="Experience" title="Where I've worked">
           <ExperienceContent />
         </Section>
-        <Section id="projects" heading="Projects" title="Things I've built">
+        <Section id="projects" index={3} heading="Projects" title="Things I've built">
           <ProjectsContent />
         </Section>
-        <Section id="skills" heading="Skills" title="What I work with">
+        <Section id="skills" index={4} heading="Skills" title="What I work with">
           <SkillsContent />
         </Section>
-        <Section id="contact" heading="Contact" title="Get in touch">
+        <Section id="contact" index={5} heading="Contact" title="Get in touch">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
             <ContactContent />
             <ResumeContent />

@@ -23,14 +23,20 @@ export function StartMenu() {
   }, [open]);
 
   return (
-    <div ref={ref} className="relative">
+    <div
+      ref={ref}
+      className="relative"
+      onKeyDown={(e) => {
+        if (e.key === "Escape") setOpen(false);
+      }}
+    >
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-label="Open apps menu"
         aria-expanded={open}
         className={cn(
-          "flex items-center gap-1.5 rounded px-2 py-1 text-os-fg hover:bg-os-bg",
+          "flex items-center gap-1.5 rounded px-2 py-1 text-os-fg transition-colors hover:bg-os-bg",
           open && "bg-os-bg text-os-accent"
         )}
       >
@@ -38,7 +44,10 @@ export function StartMenu() {
         Apps
       </button>
       {open && (
-        <div className="absolute top-full left-0 z-50 mt-1 w-48 rounded border border-os-border bg-os-surface p-1 shadow-xl">
+        <div
+          role="menu"
+          className="absolute top-full left-0 z-50 mt-1 w-48 rounded border border-os-border bg-os-surface p-1 shadow-xl"
+        >
           {appRegistry.map((app) => {
             const Icon = app.icon;
             return (
@@ -49,7 +58,7 @@ export function StartMenu() {
                   openWindow(app.id);
                   setOpen(false);
                 }}
-                className="flex w-full items-center gap-2 rounded px-2 py-1.5 text-left text-os-fg hover:bg-os-bg"
+                className="flex w-full items-center gap-2 rounded px-2 py-1.5 text-left text-os-fg transition-colors hover:bg-os-bg"
               >
                 <Icon className="size-3.5 text-os-accent" />
                 {app.title}

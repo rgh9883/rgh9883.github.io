@@ -1,27 +1,28 @@
 import type { ThemeConfig } from "./types";
 
-// Dark variant of the DESIGN.md system: canvas-dark/surface-code surfaces,
-// brand-green as the focus accent, the same Inter/Geist Mono pairing.
+// Navy-charcoal surfaces, coral prompt accent, dot-grid wallpaper — the
+// "ricing" palette shared with Traditional mode's baseline tokens.
 export const hyprlandTheme: ThemeConfig = {
   id: "hyprland",
   name: "Hyprland",
   colors: {
-    bg: "#0a0a0a",
-    surface: "#1c1c1e",
-    border: "#1f1f1f",
-    borderFocused: "#00d4a4",
-    text: "#ffffff",
-    textMuted: "#b3b3b3",
-    accent: "#00d4a4",
+    bg: "#11131a",
+    surface: "#1a1d27",
+    border: "#262a38",
+    borderFocused: "#ff9166",
+    text: "#eceef2",
+    textMuted: "#8b90a3",
+    accent: "#ff9166",
   },
   font: {
     sans: '"Inter", ui-sans-serif, system-ui, sans-serif',
     mono: '"Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace',
   },
   windowChrome: {
-    radius: "0px",
-    borderWidth: "2px",
+    radius: "8px",
+    borderWidth: "1px",
     titlebarHeight: "2rem",
   },
-  wallpaper: "linear-gradient(135deg, #1a3d4a 0%, #2d5a4f 100%)",
+  wallpaper:
+    "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0) 0 0/26px 26px, linear-gradient(135deg, #1c2230 0%, #11131a 55%, #191b26 100%)",
 };

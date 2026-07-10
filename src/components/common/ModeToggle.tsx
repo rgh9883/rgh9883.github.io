@@ -1,12 +1,18 @@
 import { LayoutGrid, ScrollText } from "lucide-react";
 
 import { useModeStore } from "@/store/modeStore";
+import { useIsMobile } from "@/lib/breakpoints";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export function ModeToggle({ className }: { className?: string }) {
   const mode = useModeStore((s) => s.mode);
   const toggleMode = useModeStore((s) => s.toggleMode);
+  const isMobile = useIsMobile();
+
+  // OS mode collapses to Traditional on mobile (see BootTransition), so
+  // there's nothing to toggle to.
+  if (isMobile) return null;
 
   return (
     <Button

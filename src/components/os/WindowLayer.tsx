@@ -1,3 +1,5 @@
+import { AnimatePresence } from "framer-motion";
+
 import { useWindowStore } from "@/store/windowStore";
 import { Window } from "./Window";
 
@@ -9,9 +11,11 @@ export function WindowLayer() {
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      {visible.map((instance) => (
-        <Window key={instance.id} instance={instance} isFocused={instance.zIndex === topZIndex} />
-      ))}
+      <AnimatePresence>
+        {visible.map((instance) => (
+          <Window key={instance.id} instance={instance} isFocused={instance.zIndex === topZIndex} />
+        ))}
+      </AnimatePresence>
     </div>
   );
 }

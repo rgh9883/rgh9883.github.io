@@ -8,6 +8,6 @@ export const resumeApp: AppDefinition = {
   title: "Resume",
   icon: FileText,
   component: ResumeContent,
-  defaultSize: { width: 360, height: 260 },
+  defaultSize: { width: 380, height: 320 },
   defaultPosition: { x: 260, y: 170 },
 };
