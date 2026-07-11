@@ -53,9 +53,17 @@ export function Hero() {
           <span className="ml-2">rahul@rgh9883 — neofetch</span>
         </div>
         <div className="grid grid-cols-[auto_1fr] gap-6 p-6 sm:gap-8 sm:p-10">
-          <div className="flex size-16 shrink-0 items-center justify-center rounded-md border border-coral/40 bg-gradient-to-br from-coral/20 to-glow/10 font-mono text-xl font-bold text-coral sm:size-20 sm:text-2xl">
-            RH
-          </div>
+          {about.photo ? (
+            <img
+              src={about.photo}
+              alt=""
+              className="size-16 shrink-0 rounded-md border border-coral/40 object-cover sm:size-20"
+            />
+          ) : (
+            <div className="flex size-16 shrink-0 items-center justify-center rounded-md border border-coral/40 bg-gradient-to-br from-coral/20 to-glow/10 font-mono text-xl font-bold text-coral sm:size-20 sm:text-2xl">
+              RH
+            </div>
+          )}
           <div className="flex flex-col justify-center gap-1.5">
             <h1 className="font-sans text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
               {about.name}

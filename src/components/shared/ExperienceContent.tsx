@@ -1,13 +1,25 @@
 import { experience } from "@/content/experience";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+
+function CompanyLogo({ logo, company }: { logo?: string; company: string }) {
+  if (logo) {
+    return <img src={logo} alt="" className="size-10 shrink-0 rounded-md object-cover" />;
+  }
+  return (
+    <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-coral/15 to-glow/10 font-mono text-sm font-bold text-coral/70">
+      {company.charAt(0)}
+    </div>
+  );
+}
 
 export function ExperienceContent() {
   return (
     <div className="flex flex-col gap-4">
       {experience.map((entry) => (
         <Card key={entry.id}>
-          <CardHeader>
-            <CardTitle className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-base font-medium">
+          <CardHeader className="flex-row items-center gap-3">
+            <CompanyLogo logo={entry.logo} company={entry.company} />
+            <CardTitle className="flex flex-1 flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-base font-medium">
               <span>
                 {entry.role} <span className="text-muted-foreground">· {entry.company}</span>
               </span>
@@ -15,15 +27,7 @@ export function ExperienceContent() {
                 {entry.start} — {entry.end}
               </span>
             </CardTitle>
-            <CardDescription>{entry.summary}</CardDescription>
           </CardHeader>
-          <CardContent>
-            <ul className="ml-4 list-disc text-sm text-muted-foreground">
-              {entry.highlights.map((h, j) => (
-                <li key={j}>{h}</li>
-              ))}
-            </ul>
-          </CardContent>
         </Card>
       ))}
     </div>

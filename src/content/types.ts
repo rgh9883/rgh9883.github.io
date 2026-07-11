@@ -4,6 +4,8 @@ export interface AboutData {
   tagline: string;
   bio: string[];
   location: string;
+  /** path under /public, e.g. "/headshot.jpg"; falls back to initials when omitted. */
+  photo?: string;
 }
 
 export interface Project {
@@ -26,8 +28,8 @@ export interface ExperienceEntry {
   role: string;
   start: string;
   end: string;
-  summary: string;
-  highlights: string[];
+  /** path under /public, e.g. "/logos/liberty-mutual.png"; falls back to initials when omitted. */
+  logo?: string;
 }
 
 export interface Skill {

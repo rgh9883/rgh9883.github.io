@@ -1,8 +1,9 @@
 import { ExternalLink } from "lucide-react";
 
 import { projects } from "@/content/projects";
-import { Badge } from "@/components/ui/badge";
+import { skillsByName } from "@/content/skillsLookup";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { SkillChip } from "@/components/shared/SkillChip";
 import { GithubIcon } from "@/assets/icons/GithubIcon";
 
 function ProjectThumb({ image, name }: { image?: string; name: string }) {
@@ -55,11 +56,10 @@ export function ProjectsContent() {
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-1.5">
-              {project.stack.map((tech) => (
-                <Badge key={tech} variant="secondary">
-                  {tech}
-                </Badge>
-              ))}
+              {project.stack.map((tech) => {
+                const skill = skillsByName[tech];
+                return <SkillChip key={tech} name={tech} slug={skill?.slug} url={skill?.url} />;
+              })}
             </div>
           </CardContent>
         </Card>

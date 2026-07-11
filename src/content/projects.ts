@@ -2,28 +2,31 @@ import type { Project } from "./types";
 
 export const projects: Project[] = [
   {
-    id: "portfolio-os",
-    name: "Portfolio / Portfolio-OS",
+    id: "pacquack",
+    name: "PacQuack",
     description:
-      "This site. A single content layer rendered two ways: a scrollable traditional page and a Hyprland-inspired desktop simulation with draggable windows.",
-    stack: ["React", "TypeScript", "Zustand", "Tailwind", "Framer Motion"],
+      "Duck themed Pacman clone developed for the QuackBox gaming console",
+    stack: ["Godot", "C#"],
     links: { repo: "https://github.com/rgh9883/rgh9883.github.io" },
     featured: true,
+    image: "/projects/pacquack.png"
   },
   {
-    id: "sample-project-two",
-    name: "Sample Project Two",
+    id: "sports-iq",
+    name: "Sports IQ Showdown",
     description:
-      "Placeholder entry — swap in a real project. Edit src/content/projects.ts; both Traditional and OS mode update automatically.",
-    stack: ["TypeScript", "Node"],
-    links: { repo: "https://github.com/rgh9883" },
+      "Online sports trivia game with a leaderboard",
+    stack: ["HTML", "JavaScript", "CSS", "Python", "Flask", "MongoDB"],
+    links: { repo: "https://github.com/rgh9883/BrickHack11" },
+    image: "/projects/sportsIQ.jpg"
   },
   {
-    id: "sample-project-three",
-    name: "Sample Project Three",
+    id: "teach-me",
+    name: "Teach Me",
     description:
-      "Another placeholder entry to demonstrate the grid/list layout with three or more cards.",
-    stack: ["Python"],
-    links: {},
+      "A website for students to easily request student mentors and receive help in many different topics and subjects.",
+    stack: ["React", "Bootstrap", "Node.js", "Express.js", "SQL"],
+    links: { repo: "https://github.com/rgh9883/Hack.COMS"},
+    image: "/projects/teachme.png"
   },
 ];
