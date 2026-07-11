@@ -7,7 +7,7 @@ export const projects: Project[] = [
     description:
       "Duck themed Pacman clone developed for the QuackBox gaming console",
     stack: ["Godot", "C#"],
-    links: { repo: "https://github.com/rgh9883/rgh9883.github.io" },
+    links: { repo: "https://github.com/rgh9883/pacquack" },
     featured: true,
     image: "/projects/pacquack.png"
   },
