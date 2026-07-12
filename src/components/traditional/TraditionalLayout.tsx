@@ -10,7 +10,7 @@ import { ResumeContent } from "@/components/shared/ResumeContent";
 
 export function TraditionalLayout() {
   return (
-    <div className="min-h-svh">
+    <div id="top" className="min-h-svh">
       <Nav />
       <Hero />
       <main>

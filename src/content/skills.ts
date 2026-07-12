@@ -57,6 +57,8 @@ export const skills: SkillGroup[] = [
       { name: "DataGrip", slug: "datagrip", url: "https://www.jetbrains.com/datagrip/" },
       { name: "Neovim", slug: "neovim", url: "https://neovim.io" },
       { name: "Godot", slug: "godotengine", url: "https://godotengine.org" },
+      { name: "Claude Code", slug: "claudecode", url: "https://claude.com/product/claude-code" },
+      { name: "GitHub Copilot", slug: "githubcopilot", url: "https://github.com/features/copilot" },
     ],
   },
 ];

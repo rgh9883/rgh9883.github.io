@@ -27,6 +27,8 @@ import {
   siGodotengine,
   siGithubactions,
   siVscodium,
+  siClaudecode,
+  siGithubcopilot,
 } from "simple-icons";
 
 // Keyed by simple-icons slug (matches Skill.slug in content/skills.ts).
@@ -61,5 +63,7 @@ export const skillIconPaths: Record<string, string> = {
   [siNeovim.slug]: siNeovim.path,
   [siGodotengine.slug]: siGodotengine.path,
   [siGithubactions.slug]: siGithubactions.path,
-  [siVscodium.slug]: siVscodium.path
+  [siVscodium.slug]: siVscodium.path,
+  [siClaudecode.slug]: siClaudecode.path,
+  [siGithubcopilot.slug]: siGithubcopilot.path,
 };
