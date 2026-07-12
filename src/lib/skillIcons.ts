@@ -13,10 +13,26 @@ import {
   siDocker,
   siGit,
   siVite,
+  siJavascript,
+  siC,
+  siAngular,
+  siSpringboot,
+  siRust,
+  siPytorch,
+  siOpencv,
+  siIntellijidea,
+  siDatagrip,
+  siGithub,
+  siNeovim,
+  siGodotengine,
+  siGithubactions,
+  siVscodium,
 } from "simple-icons";
 
 // Keyed by simple-icons slug (matches Skill.slug in content/skills.ts).
 // Named imports keep the bundle to only the icons actually used.
+// Some brands (Java, C#, generic SQL, VS Code) have no icon in simple-icons
+// — those Skill entries omit `slug` and render name-only, same as REST APIs.
 export const skillIconPaths: Record<string, string> = {
   [siTypescript.slug]: siTypescript.path,
   [siPython.slug]: siPython.path,
@@ -32,4 +48,18 @@ export const skillIconPaths: Record<string, string> = {
   [siDocker.slug]: siDocker.path,
   [siGit.slug]: siGit.path,
   [siVite.slug]: siVite.path,
+  [siJavascript.slug]: siJavascript.path,
+  [siC.slug]: siC.path,
+  [siAngular.slug]: siAngular.path,
+  [siSpringboot.slug]: siSpringboot.path,
+  [siRust.slug]: siRust.path,
+  [siPytorch.slug]: siPytorch.path,
+  [siOpencv.slug]: siOpencv.path,
+  [siIntellijidea.slug]: siIntellijidea.path,
+  [siDatagrip.slug]: siDatagrip.path,
+  [siGithub.slug]: siGithub.path,
+  [siNeovim.slug]: siNeovim.path,
+  [siGodotengine.slug]: siGodotengine.path,
+  [siGithubactions.slug]: siGithubactions.path,
+  [siVscodium.slug]: siVscodium.path
 };

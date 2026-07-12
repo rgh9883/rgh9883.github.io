@@ -5,8 +5,10 @@ export const about: AboutData = {
   role: "Software Engineer",
   tagline: "Currently Building @ Liberty Mutual",
   bio: [
-    "I'm a software engineer who likes small, well-considered tools — on the web and on the desktop. Most days you'll find me somewhere between a terminal and a browser tab.",
-    "This site is one of those tools: a normal portfolio and a tiling-window-manager simulation, both reading from the same content so neither one goes stale.",
+    "I just finished my second year at Rochester Institute of Technology (RIT) working towards an Accelerated BS/MS degree with a BS in Computer Science and MS in Cybersecurity.",
+    "I am interested in Software Development, Game Development, Artificial Intelligence, and Cybersecurity.",
+    "Aside from education, I play Tennis and Pickleball, watch sports, and make projects for fun.",
+    "Thanks for visiting!"
   ],
   location: "Based in the US",
   photo: "/headshot.JPG"
