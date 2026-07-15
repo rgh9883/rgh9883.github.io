@@ -15,9 +15,6 @@ const icons = {
 export function ContactContent() {
   return (
     <div className="flex flex-col gap-3">
-      <p className="text-sm text-muted-foreground">
-        Reach out directly — no form, just links.
-      </p>
       <div className="flex flex-col gap-2">
         {contactLinks.map((link) => {
           const Icon = icons[link.icon];
