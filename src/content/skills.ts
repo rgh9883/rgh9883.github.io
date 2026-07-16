@@ -39,6 +39,7 @@ export const skills: SkillGroup[] = [
     id: "ai-ml",
     label: "AI / ML",
     skills: [
+      { name: "scikit-learn", slug: "scikitlearn", url: "https://scikit-learn.org" },
       { name: "PyTorch", slug: "pytorch", url: "https://pytorch.org" },
       { name: "OpenCV", slug: "opencv", url: "https://opencv.org" },
     ],

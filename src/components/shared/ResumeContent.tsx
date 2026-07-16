@@ -1,4 +1,4 @@
-import { FileText, Download } from "lucide-react";
+import { FileText, Eye } from "lucide-react";
 
 import { resumeUrl } from "@/content/contact";
 import { Button } from "@/components/ui/button";
@@ -9,13 +9,11 @@ export function ResumeContent() {
     <Card>
       <CardContent className="flex flex-col items-start gap-3">
         <FileText size={32} className="text-primary" />
-        <p className="text-sm text-muted-foreground">
-          Download a copy of my resume as a PDF.
-        </p>
+        <p className="text-sm text-muted-foreground">View a copy of my resume.</p>
         <Button asChild>
-          <a href={resumeUrl} download>
-            <Download size={16} />
-            Download Resume
+          <a href={resumeUrl} target="_blank" rel="noreferrer">
+            <Eye size={16} />
+            View Resume
           </a>
         </Button>
       </CardContent>

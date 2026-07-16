@@ -29,6 +29,16 @@ import {
   siVscodium,
   siClaudecode,
   siGithubcopilot,
+  siFirebase,
+  siFlask,
+  siFastapi,
+  siScikitlearn,
+  siSupabase,
+  siBootstrap,
+  siExpress,
+  siHtml5,
+  siCss,
+  siMongodb,
 } from "simple-icons";
 
 // Keyed by simple-icons slug (matches Skill.slug in content/skills.ts).
@@ -66,4 +76,14 @@ export const skillIconPaths: Record<string, string> = {
   [siVscodium.slug]: siVscodium.path,
   [siClaudecode.slug]: siClaudecode.path,
   [siGithubcopilot.slug]: siGithubcopilot.path,
+  [siFirebase.slug]: siFirebase.path,
+  [siFlask.slug]: siFlask.path,
+  [siFastapi.slug]: siFastapi.path,
+  [siScikitlearn.slug]: siScikitlearn.path,
+  [siSupabase.slug]: siSupabase.path,
+  [siBootstrap.slug]: siBootstrap.path,
+  [siExpress.slug]: siExpress.path,
+  [siHtml5.slug]: siHtml5.path,
+  [siCss.slug]: siCss.path,
+  [siMongodb.slug]: siMongodb.path
 };
