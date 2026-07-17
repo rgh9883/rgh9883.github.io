@@ -1,16 +1,6 @@
 import { experience } from "@/content/experience";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-
-function CompanyLogo({ logo, company }: { logo?: string; company: string }) {
-  if (logo) {
-    return <img src={logo} alt="" className="size-10 shrink-0 rounded-md object-cover" />;
-  }
-  return (
-    <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-coral/15 to-glow/10 font-mono text-sm font-bold text-coral/70">
-      {company.charAt(0)}
-    </div>
-  );
-}
+import { CompanyLogo } from "@/components/shared/CompanyLogo";
 
 export function ExperienceContent() {
   return (

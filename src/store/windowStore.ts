@@ -12,13 +12,15 @@ export interface WindowInstance {
   position: { x: number; y: number };
   size: { width: number; height: number };
   zIndex: number;
+  /** Command to auto-run once (e.g. `terminal` opened from the boot sequence with "aboutme"). */
+  initialCommand?: string;
 }
 
 interface WindowStoreState {
   windows: Record<string, WindowInstance>;
   nextZIndex: number;
 
-  openWindow: (appId: string) => void;
+  openWindow: (appId: string, options?: { initialCommand?: string }) => void;
   closeWindow: (id: string) => void;
   focusWindow: (id: string) => void;
   minimizeWindow: (id: string) => void;
@@ -31,7 +33,7 @@ export const useWindowStore = create<WindowStoreState>((set, get) => ({
   windows: {},
   nextZIndex: 1,
 
-  openWindow: (appId) => {
+  openWindow: (appId, options) => {
     const existing = Object.values(get().windows).find((w) => w.appId === appId);
     if (existing) {
       get().focusWindow(existing.id);
@@ -51,8 +53,9 @@ export const useWindowStore = create<WindowStoreState>((set, get) => ({
           isMinimized: false,
           isMaximized: false,
           position: app.defaultPosition ?? { x: 80, y: 80 },
-          size: app.defaultSize,
+          size: app.defaultSize ?? { width: 400, height: 300 },
           zIndex: s.nextZIndex,
+          initialCommand: options?.initialCommand,
         },
       },
       nextZIndex: s.nextZIndex + 1,

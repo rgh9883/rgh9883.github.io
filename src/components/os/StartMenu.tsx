@@ -55,7 +55,11 @@ export function StartMenu() {
                 key={app.id}
                 type="button"
                 onClick={() => {
-                  openWindow(app.id);
+                  if (app.href) {
+                    window.open(app.href, "_blank", "noopener,noreferrer");
+                  } else {
+                    openWindow(app.id);
+                  }
                   setOpen(false);
                 }}
                 className="flex w-full items-center gap-2 rounded px-2 py-1.5 text-left text-os-fg transition-colors hover:bg-os-bg"

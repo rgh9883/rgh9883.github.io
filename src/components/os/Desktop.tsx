@@ -16,6 +16,11 @@ export function Desktop() {
     applyTheme(themeRegistry[themeId] ?? themeRegistry[defaultThemeId]);
   }, [themeId]);
 
+  // Greet with a fastfetch-style intro whenever OS mode boots up.
+  useEffect(() => {
+    openWindow("terminal", { initialCommand: "aboutme" });
+  }, [openWindow]);
+
   return (
     <div
       className="flex h-svh w-full flex-col overflow-hidden bg-os-bg font-os-sans"
@@ -25,7 +30,13 @@ export function Desktop() {
       <div className="relative min-h-0 flex-1">
         <div className="flex h-full flex-col flex-wrap content-start gap-2 p-4">
           {appRegistry.map((app) => (
-            <DesktopIcon key={app.id} app={app} onOpen={() => openWindow(app.id)} />
+            <DesktopIcon
+              key={app.id}
+              app={app}
+              onOpen={() =>
+                app.href ? window.open(app.href, "_blank", "noopener,noreferrer") : openWindow(app.id)
+              }
+            />
           ))}
         </div>
         <WindowLayer />

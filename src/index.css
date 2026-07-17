@@ -67,6 +67,30 @@
     scroll-behavior: smooth;
   }
 
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-coral) var(--color-card);
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--color-card);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: var(--color-coral);
+    border-radius: 999px;
+    border: 2px solid var(--color-card);
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: var(--color-glow);
+  }
+
   body {
     margin: 0;
     background-color: var(--color-background);

@@ -95,7 +95,7 @@ export function Window({ instance, isFocused }: WindowProps) {
             } as CSSProperties
           }
         >
-          <Content />
+          {Content && <Content isMaximized={instance.isMaximized} initialCommand={instance.initialCommand} />}
         </div>
       </motion.div>
     </Rnd>

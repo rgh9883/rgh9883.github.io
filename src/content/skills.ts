@@ -6,13 +6,10 @@ export const skills: SkillGroup[] = [
     label: "Languages",
     skills: [
       { name: "Java", url: "https://www.java.com" },
-      { name: "JavaScript", slug: "javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
       { name: "TypeScript", slug: "typescript", url: "https://www.typescriptlang.org" },
       { name: "Python", slug: "python", url: "https://www.python.org" },
       { name: "SQL", url: "https://en.wikipedia.org/wiki/SQL" },
       { name: "C", slug: "c", url: "https://en.wikipedia.org/wiki/C_(programming_language)" },
-      { name: "C#", url: "https://learn.microsoft.com/en-us/dotnet/csharp/" },
-      { name: "Rust", slug: "rust", url: "https://www.rust-lang.org" },
       { name: "Bash", slug: "gnubash", url: "https://www.gnu.org/software/bash/" },
     ],
   },
@@ -22,7 +19,6 @@ export const skills: SkillGroup[] = [
     skills: [
       { name: "React", slug: "react", url: "https://react.dev" },
       { name: "AngularJS", slug: "angular", url: "https://angularjs.org" },
-      { name: "Tailwind CSS", slug: "tailwindcss", url: "https://tailwindcss.com" },
     ],
   },
   {
@@ -52,11 +48,7 @@ export const skills: SkillGroup[] = [
       { name: "Docker", slug: "docker", url: "https://www.docker.com" },
       { name: "Git", slug: "git", url: "https://git-scm.com" },
       { name: "GitHub", slug: "github", url: "https://github.com" },
-      { name: "Visual Studio Code", slug: "vscodium",url: "https://code.visualstudio.com" },
-      { name: "IntelliJ IDEA", slug: "intellijidea", url: "https://www.jetbrains.com/idea/" },
       { name: "Neovim", slug: "neovim", url: "https://neovim.io" },
-      { name: "Claude Code", slug: "claudecode", url: "https://claude.com/product/claude-code" },
-      { name: "GitHub Copilot", slug: "githubcopilot", url: "https://github.com/features/copilot" },
     ],
   },
 ];

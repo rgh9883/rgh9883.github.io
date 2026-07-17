@@ -1,13 +1,13 @@
 import { Briefcase } from "lucide-react";
 
-import { ExperienceContent } from "@/components/shared/ExperienceContent";
+import { ExperienceApp } from "@/apps/components/ExperienceApp";
 import type { AppDefinition } from "../registry";
 
 export const experienceApp: AppDefinition = {
   id: "experience",
   title: "Experience",
   icon: Briefcase,
-  component: ExperienceContent,
-  defaultSize: { width: 520, height: 460 },
+  component: ExperienceApp,
+  defaultSize: { width: 560, height: 420 },
   defaultPosition: { x: 200, y: 140 },
 };
