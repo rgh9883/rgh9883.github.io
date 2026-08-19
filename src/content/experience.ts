@@ -14,7 +14,7 @@ export const experience: ExperienceEntry[] = [
     company: "Liberty Mutual Insurance",
     role: "Software Engineer Intern",
     start: "May 2026",
-    end: "Aug 2026",
+    end: "July 2026",
     logo: "/logos/liberty.jpeg"
   },
   {
