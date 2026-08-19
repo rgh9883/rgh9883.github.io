@@ -2,6 +2,14 @@ import type { ExperienceEntry } from "./types";
 
 export const experience: ExperienceEntry[] = [
   {
+    id: "data-jnj",
+    company: "Johnson & Johnson (via EnQubes)",
+    role: "Data Analyst Intern",
+    start: "Aug 2026",
+    end: "Present",
+    logo: "/logos/jnj.jpg"
+  },
+  {
     id: "techstart-liberty",
     company: "Liberty Mutual Insurance",
     role: "Software Engineer Intern",

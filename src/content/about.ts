@@ -3,7 +3,7 @@ import type { AboutData } from "./types";
 export const about: AboutData = {
   name: "Rahul Hegde",
   role: "Software Engineer",
-  tagline: "Currently Building @ Liberty Mutual",
+  tagline: "Currently Building @ Johnson & Johnson",
   bio: [
     "I just finished my second year at Rochester Institute of Technology (RIT) working towards an Accelerated BS/MS degree with a BS in Computer Science and MS in Cybersecurity.",
     "I am interested in Software Development, Game Development, Artificial Intelligence, and Cybersecurity.",
